@@ -22,7 +22,7 @@ public class frame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("My Digital Clock");
         this.setLayout(new FlowLayout());
-        this.setSize(382,350);
+        this.setSize(480,350);
         //this.setResizable(false);
         String text;
         String linebreak;
@@ -32,14 +32,16 @@ public class frame extends JFrame {
         JLabel displayLabel;
         displayLabel = new JLabel();
         displayLabel.setFont(new Font("Verdana",Font.PLAIN,20));
-        displayLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        displayLabel.setHorizontalAlignment(JLabel.CENTER);
         displayLabel.setText(text);
+        displayLabel.setBounds(50,10,380,100);
 
         JLabel linesbreak;
         linesbreak = new JLabel();
         linesbreak.setFont(new Font("Verdana",Font.PLAIN,20));
-        linesbreak.setHorizontalAlignment(SwingConstants.CENTER);
+        linesbreak.setHorizontalAlignment(JLabel.CENTER);
         linesbreak.setText(linebreak);
+        linesbreak.setBounds(50,10,380,100);
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
         dayFormat = new SimpleDateFormat("EEEE");
@@ -48,17 +50,20 @@ public class frame extends JFrame {
         timeLabel = new JLabel();
         timeLabel.setFont(new Font("Verdana",Font.PLAIN,50));
         timeLabel.setForeground(new Color(0x2592F0));
-        timeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        timeLabel.setHorizontalAlignment(JLabel.CENTER);
         //timeLabel.setBackground(Color.black);
         timeLabel.setOpaque(true);
+        timeLabel.setBounds(50,75,380,100);
 
         dayLabel = new JLabel();
         dayLabel.setFont(new Font("Ink Free",Font.PLAIN,40));
-        dayLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        dayLabel.setHorizontalAlignment(JLabel.CENTER);
+        dayLabel.setBounds(50,150,380,100);
 
         dateLabel = new JLabel();
         dateLabel.setFont(new Font("Ink Free",Font.PLAIN,30));
-        dateLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        dateLabel.setHorizontalAlignment(JLabel.CENTER);
+        dateLabel.setBounds(50,210,380,100);
 
         this.add(displayLabel);
         this.add(linesbreak);
@@ -67,6 +72,7 @@ public class frame extends JFrame {
         this.add(dayLabel);
         this.add(linesbreak);
         this.add(dateLabel);
+        this.setLayout(null);
         this.setVisible(true);
         setTime();
         br.append("</body>" + "</html>");
